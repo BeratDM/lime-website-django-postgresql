@@ -45,12 +45,12 @@ RECAPTCHA_PRIVATE_KEY = os.getenv(
 # EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
-DEFAULT_EMAIL_FROM = os.getenv(
-    "DEFAULT_EMAIL_FROM",
+DEFAULT_EMAIL_SEND_FROM = os.getenv(
+    "DEFAULT_EMAIL_SEND_FROM",
     default="x",
 )
-DEFAULT_EMAIL_TO = os.getenv(
-    "DEFAULT_EMAIL_TO",
+DEFAULT_EMAIL_SEND_TO = os.getenv(
+    "DEFAULT_EMAIL_SEND_TO",
     default="y",
 )
 EMAIL_HOST = os.getenv(

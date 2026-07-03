@@ -2,7 +2,7 @@ from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.core.mail import send_mail
 
-from lime_website.settings import DEFAULT_EMAIL_TO, DEFAULT_EMAIL_FROM
+from lime_website.settings import DEFAULT_EMAIL_SEND_TO, DEFAULT_EMAIL_SEND_FROM
 import bleach
 from . import forms
 
@@ -25,8 +25,8 @@ def contact(request: HttpRequest) -> HttpResponse:
             send_mail(
                 f"New Message Received From BU!",
                 message_body,
-                DEFAULT_EMAIL_FROM,
-                [DEFAULT_EMAIL_TO],
+                DEFAULT_EMAIL_SEND_FROM,
+                [DEFAULT_EMAIL_SEND_TO],
             )
             return render(
                 request, "contact.html", {"form": form, "contact_success": True}
