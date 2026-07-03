@@ -1,4 +1,4 @@
-FROM python:3.9-slim AS production
+FROM python:3.13-slim AS production
 
 ENV PYTHONUNBUFFERED=1
 WORKDIR /app/
@@ -20,6 +20,9 @@ RUN pip install -r ./requirements/prod.txt
 COPY lime_website/manage.py ./lime_website/manage.py
 # COPY lime_website/setup.cfg ./lime_website/setup.cfg
 COPY lime_website/lime_website ./lime_website/lime_website
+COPY lime_website/static ./lime_website/static
+
+COPY Makefile ./Makefile
 
 EXPOSE 8000
 

@@ -24,4 +24,7 @@ compose-manage-py:
 	docker-compose run --rm $(options) website python ./lime_website/manage.py $(cmd)
 
 start-server:
-	python manage.py runserver 0.0.0.0:80
+	python ./lime_website/manage.py runserver 0.0.0.0:80
+
+helm-deploy:
+	helm upgrade --install -f helm/lime-w/env-values.yaml lime-web2 helm/lime-w
