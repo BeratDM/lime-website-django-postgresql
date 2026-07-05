@@ -26,5 +26,8 @@ compose-manage-py:
 start-server:
 	python ./lime_website/manage.py runserver 0.0.0.0:80
 
+migrate:
+	python ./lime_website/manage.py migrate
+
 helm-deploy:
 	helm upgrade --install -f helm/lime-w/env-values.yaml lime-web2 helm/lime-w
